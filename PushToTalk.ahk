@@ -15,7 +15,7 @@
 
 
 ;This is the mic that is controled
-myMic=13
+myMic=30
 
 
 #SingleInstance, force
@@ -35,15 +35,15 @@ OnExit, ExitSub
 SoundSet, 1, , MUTE, myMic
 Return
 
-$Capslock:: ;Change this for the button you want to use
+~$F10:: ;Change this for the button you want to use
 	;THIS IS WHAT IT DOES WHEN YOU PUSH BUTTON
-    SoundSet, 0, , MUTE, myMic
     SoundBeep, 300
+    SoundSet, 0, , MUTE, myMic
     Menu, Tray, Icon, imageres.dll, 228, 1
 	Menu, Tray, Tip, Mic Active
 	
 	;THIS IS WHAT IT DOES WHEN YOU RELEASE BUTTON
-    KeyWait, Capslock   ;MAKE SURE IF YOU CHANGE THE KEYBINDING BUTTON TO CHANGE THIS
+    KeyWait, F10   ;MAKE SURE IF YOU CHANGE THE KEYBINDING BUTTON TO CHANGE THIS
     SoundSet, 1, , MUTE, myMic
     SoundBeep, 200
 	Menu, Tray, Icon, imageres.dll, 233, 1
