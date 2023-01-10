@@ -2,7 +2,8 @@
 #Warn			;Recommended for catching common errors.
 SendMode Input	;Recommended for new scripts due to its superior speed and reliability.
 
-DesiredLevel := 100.0
+DesiredLevel1 := 100.0
+DesiredLevel2 := 75.0
 DeviceNumber1 := 12
 DeviceNumber2 := 11
 
@@ -12,12 +13,12 @@ DeviceNumber2 := 11
 SetFormat, float, 0.1
 Menu, Tray, Icon, ddores.dll, 7
 TrayTip, SetMic100
-SetTimer, SetMic, 30
+SetTimer, SetMic, 15000
 return
 
 SetMic:
-    SoundSet, DesiredLevel,,Vol,DeviceNumber1
-    SoundSet, DesiredLevel,,Vol,DeviceNumber2
+    SoundSet, DesiredLevel1,,Vol,DeviceNumber1
+    SoundSet, DesiredLevel2,,Vol,DeviceNumber2
     if ErrorLevel 
         MsgBox,48,ForceMicLevel,%ErrorLevel%
 return
